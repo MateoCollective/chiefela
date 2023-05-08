@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="My Foods - Recipe App" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Search for your next delicious meal based on their category or their country of provenience."/>
+    <meta property="og:image" content="images/preview1.png" />
+    <meta property="og:url" content="https://philiphinch.github.io/my-foods-app/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/fork-and-knife.ico"/>
+    <title>My Foods | Home</title>
+</head>
+<body class="disable-select">
+    <div class="container">
+      
+        <nav class="navbar">
+            <a href="index.html" class="active"><i class="fas fa-home"></i></a>
+            <a href="search.html"><i class="fas fa-search"></i></a>
+            <a href="country.html"><i class="far fa-list-alt"></i></a>
+            <a href="favourite.html"><i class="far fa-heart"></i></a>
+        </nav>
+        <!-- recipe -->
+        <section class="recipe-section none">
+            
+        </section>
+        <section class="random-meal-section">
+            <!-- random meal container -->
+        </section>
+        <section class="meal-categories-section">
+            <div class="title-container">
+                <h1 class="title">Category</h1>
+                <a class="see-all" href="#">See All</a>
+              </div>
+            <div class="categories-container">
+                <div class="category active-background" id="Beef"><i class="fas fa-hamburger"></i><p>Beef</p></div>
+                <div class="category" id="Chicken"><i class="fas fa-drumstick-bite"></i><p>Chicken</p></div>
+                <div class="category" id="Dessert"><i class="fas fa-birthday-cake"></i><p>Dessert</p></div>
+                <div class="category" id="Lamb"><i class="fas fa-kiwi-bird"></i><p>Lamb</p></div>
+                <div class="category" id="Miscellaneous"><i class="fab fa-mixer"></i><p>Misc</p></div>
+                <div class="category" id="Pasta"><i class="fas fa-pizza-slice"></i><p>Pasta</p></div>
+                <div class="category"  id="Pork"><i class="fas fa-piggy-bank"></i><p>Pork</p></div>
+                <div class="category" id="Seafood"><i class="fas fa-fish"></i><p>Seafood</p></div>
+                <div class="category" id="Side"><i class="fas fa-bacon"></i><p>Side</p></div>
+                <div class="category" id="Starter"><i class="fas fa-cookie-bite"></i><p>Starter</p></div>
+                <div class="category" id="Vegan"><i class="fas fa-leaf"></i><p>Vegan</p></div>
+                <div class="category" id="Vegetarian"><i class="fas fa-carrot"></i><p>Veggies</p></div>
+                <div class="category" id="Breakfast"><i class="fas fa-coffee"></i><p>Morning</p></div>
+                <div class="category" id="Goat"><i class="fas fa-horse"></i><p>Goat</p></div>
+            </div>
+            <div class="title-container">
+                <h1 class="title">Judul</h1>
+                <a class="see-all" href="#">See All</a>
+              </div>
+              
+            <div class="grid">
+                
+            </div>
+        </section>
+        <div class="extra-bottom-space"></div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
