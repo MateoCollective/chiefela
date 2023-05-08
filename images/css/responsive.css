@@ -1,0 +1,20 @@
+@media (max-width: 768px) {
+  .meal-info {
+    width: 100%;
+  }
+
+  .meal-photo {
+    text-align: center;
+  }
+
+  .meal-photo img {
+    width: 100%;
+    height: auto;
+  }
+
+  .meal-title {
+    margin: 10px;
+    font-size: 1rem;
+    text-align: center;
+  }
+}

@@ -114,13 +114,14 @@ class UI {
         if (meals.includes(data.meals[0].idMeal)) {
             recipeSection.innerHTML = `
             <div class="close-btn"><i class="fas fa-times"></i></div>
-            <div class="recipe-image-container">
-                <img src="${ data.meals[0].strMealThumb }" alt="${ data.meals[0].strMeal }">
-            </div>
             <div class="recipe-info-container">
-                <h3 class="recipe-title active">
+            <div class="recipe-image-container">
+            <img src="${ data.meals[0].strMealThumb }" alt="${ data.meals[0].strMeal }">
+        </div>
+                <h3 class="recipe-title">
                 ${ data.meals[0].strMeal }
                 </h3>
+                
                 <div class="recipe-category-container">
                     <p class="recipe-category active">Category:</p>
                     <p class="recipe-category-result">${ data.meals[0].strCategory }</p>
@@ -169,11 +170,12 @@ class UI {
             `} else {
             recipeSection.innerHTML = `
         <div class="close-btn"><i class="fas fa-times"></i></div>
+        
+        <div class="recipe-info-container">
         <div class="recipe-image-container">
             <img src="${ data.meals[0].strMealThumb }" alt="${ data.meals[0].strMeal }">
         </div>
-        <div class="recipe-info-container">
-            <h3 class="recipe-title active">
+            <h3 class="recipe-title">
             ${ data.meals[0].strMeal }
             </h3>
             <div class="recipe-category-container">
@@ -233,7 +235,7 @@ class UI {
         let card = document.createElement('div');
         //insert obj data in new div
         card.innerHTML = `
-        <p for="random-meal-container" class="random-meal-label not-active">Random Meal</p>
+        <p for="random-meal-container" class="random-meal-label not-active"></p>
         <div class="random-meal-container" id="${ meal.id }">
             <div class="random-meal-info">
                 <h3 class="random-meal-title active">${ meal.name }</h3>
