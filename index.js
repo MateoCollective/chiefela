@@ -113,9 +113,12 @@ class UI {
         const meals = Storage.getMealFromLS();
         if (meals.includes(data.meals[0].idMeal)) {
             recipeSection.innerHTML = `
-            <div class="close-btn"><i class="fas fa-times"></i></div>
-            <div class="recipe-info-container">
-            <div class="recipe-image-container">
+            <header class="header-details">
+            <div class="close-btn icon"><i class="fas fa-times"></i></div>
+            <div>
+              <i class="fas fa-heart icon"></i>
+            </div>
+            </header>
             <img src="${ data.meals[0].strMealThumb }" alt="${ data.meals[0].strMeal }">
         </div>
                 <h3 class="recipe-title">
@@ -172,9 +175,7 @@ class UI {
         } else {
             recipeSection.innerHTML = `
             <header class="header-details">
-            <div class="close-btn">
-              <i class="fas fa-arrow-left icon"></i>
-            </div>
+            <div class="close-btn icon"><i class="fas fa-times"></i></div>
             <div>
               <i class="fas fa-heart icon"></i>
             </div>
@@ -256,9 +257,7 @@ class UI {
                 <h3 class="random-meal-title active">${ meal.name }</h3>
                 <p class=random-meal-category><i class="fas fa-boxes active"></i>${ meal.type }</p>
                 <p class="random-meal-area"><i class="fas fa-flag active"></i>${ meal.area }</p>
-                <div class="heart-container">
-                    <i class="fas fa-heart heart-full"></i>
-                </div> 
+           
             </div>
             <div class="random-meal-photo">
                 <img src="${ meal.thumb }" alt="random meal">

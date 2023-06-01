@@ -19,14 +19,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: 600px;
+
 }
 
 body {
   font-family: "Open Sans", sans-serif;
   background-color: var(--dark-grey);
-  width: 100%;
-  max-width: 100%;
 }
 
 .container {
@@ -149,11 +147,17 @@ a {
   right: 0;
   top: 0;
   z-index: 999;
+  text-decoration: none;
+}
+
+.header a {
+  color: var(--very-light-grey);
+  font-size: 20px;
 }
 
 /* Style untuk logo */
 .logo {
-  width: 30px;
+  width: 35px;
 }
 
 
@@ -752,6 +756,8 @@ i.fa-times {
 
 .section-ser {
   width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-button {
@@ -765,10 +771,10 @@ i.fa-times {
   margin: 20px;
   text-align: left;
   opacity: 60%;
+  width: 85%;
 }
 
-.section-ser button {
-
+.ukr {
 }
 
 .search-button i {

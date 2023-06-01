@@ -109,7 +109,12 @@ class UI {
         const meals = Storage.getMealFromLS();
         if (meals.includes(data.meals[0].idMeal)) {
             recipeSection.innerHTML = `
-            <div class="close-btn"><i class="fas fa-times"></i></div>
+            <header class="header-details">
+            <div class="close-btn icon"><i class="fas fa-times"></i></div>
+            <div>
+              <i class="fas fa-heart icon"></i>
+            </div>
+            </header>
             <div class="recipe-image-container">
                 <img src="${ data.meals[0].strMealThumb }" alt="${ data.meals[0].strMeal }">
             </div>
@@ -165,7 +170,12 @@ class UI {
             `
         } else {
             recipeSection.innerHTML = `
-            <div class="close-btn"><i class="fas fa-times"></i></div>
+            <header class="header-details">
+            <div class="close-btn icon"><i class="fas fa-times"></i></div>
+            <div>
+              <i class="fas fa-heart icon"></i>
+            </div>
+            </header>
             <div class="recipe-image-container">
                 <img src="${ data.meals[0].strMealThumb }" alt="${ data.meals[0].strMeal }">
             </div>

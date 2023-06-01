@@ -94,7 +94,12 @@ class UI {
     //create recipe
     static createRecipe(data) {
         recipeSection.innerHTML = `
-            <div class="close-btn"><i class="fas fa-times"></i></div>
+        <header class="header-details">
+        <div class="close-btn icon"><i class="fas fa-times"></i></div>
+        <div>
+          <i class="fas fa-heart icon"></i>
+        </div>
+        </header>
             <div class="recipe-image-container">
                 <img src="${ data.meals[0].strMealThumb }" alt="${ data.meals[0].strMeal }">
             </div>
