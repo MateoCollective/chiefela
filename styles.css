@@ -19,11 +19,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-width: 600px;
 }
 
 body {
   font-family: "Open Sans", sans-serif;
   background-color: var(--dark-grey);
+  width: 100%;
+  max-width: 100%;
 }
 
 .container {
@@ -141,6 +144,11 @@ a {
   background-color: var(--medium-grey);
   border-bottom: 1px solid var(--very-light-grey);
   color: var(--very-light-grey);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
 }
 
 /* Style untuk logo */
@@ -275,6 +283,7 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
+  flex-wrap: nowrap;
 }
 
 .grid-item {
@@ -370,11 +379,12 @@ a {
 
 .heart-container i {
   font-size: 1.5rem;
-  color: var(--dark-grey);
+  color: var(--medium-grey);
 }
 
 .heart-full {
   transition: color 0.2s;
+  z-index: 1;
 }
 
 .animate-heart {
@@ -474,24 +484,26 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--medium-grey);
   z-index: 5000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 2px solid var(--active);
   overflow-y: scroll;
+  background-color: var(--dark-grey);
+}
+
+.retop {
+  z-index: 5000;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: var(--dark-grey);
+  position: relative;
+  top: -20px;
+
 }
 
 /* recipe-button */
 
-.close-btn {
-  position: absolute;
-  color: var(--light-grey);
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-}
 
 i.fa-times {
   font-size: 2.2rem;
@@ -528,6 +540,7 @@ i.fa-times {
   margin-left: 20px;
 }
 
+
 /* category */
 
 .recipe-category-container {
@@ -537,8 +550,8 @@ i.fa-times {
 }
 
 .recipe-category-container p {
-  color: var(--white);
-  font-weight: 600;
+  color: var(--light-grey);
+  font-weight: 500;
   letter-spacing: 1.5px;
   font-size: 0.9rem;
   
@@ -556,8 +569,8 @@ i.fa-times {
 }
 
 .recipe-area-container {
-  color: var(--white);
-  font-weight: 600;
+  color: var(--light-grey);
+  font-weight: 500;
   letter-spacing: 1.5px;
   font-size: 0.9rem;
   margin-left: 20px;
@@ -663,6 +676,109 @@ i.fa-times {
   width: 100%;
 }
 
+.container-play {
+  position: fixed;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5555555;
+}
+
+.play-button {
+  width: 130px;
+  height: 40px;
+  font-size: 16px;
+  background-color: var(--active);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+}
+
+.header-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: var(--white);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5555555;
+}
+
+.icon {
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 0 5px;
+}
+
+.notification {
+  display: none;
+  position: fixed;
+  top: 8%;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  font-size: 16px;
+  z-index: 999;
+}
+.notification p {
+  margin: 0;
+}
+.notification h1 {
+  margin: 0;
+  font-size: 15px;
+}
+.notification .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+#greeting {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 60px;
+  margin-left: 20px;
+  color: #333;
+}
+
+.section-ser {
+  width: 100%;
+}
+
+.search-button {
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--medium-grey);
+  color: var(--light-grey);
+  font-size: 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 20px;
+  text-align: left;
+  opacity: 60%;
+}
+
+.section-ser button {
+
+}
+
+.search-button i {
+  margin-right: 5px;
+}
+
+/* Jika Anda menggunakan Font Awesome, pastikan Anda telah menghubungkan file CSS Font Awesome */
+
+
+
 @keyframes heartAni {
   0% {
     transform: scale(0.8);
@@ -708,3 +824,4 @@ i.fa-times {
     text-align: center;
   }
 }
+

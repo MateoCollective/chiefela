@@ -123,11 +123,12 @@ class UI {
                 </h3>
                 
                 <div class="recipe-category-container">
-                    <p class="recipe-category active">Category:</p>
+                
+                    <p class="recipe-category">Category:</p>
                     <p class="recipe-category-result">${ data.meals[0].strCategory }</p>
                 </div>
                 <div class="recipe-area-container">
-                    <p class="recipe-area active">Area:</p>
+                    <p class="recipe-area">Area:</p>
                     <p class="recipe-area-result">${ data.meals[0].strArea }</p>
                 </div>
                 <div class="heart-container" id="${ data.meals[0].idMeal }">
@@ -167,23 +168,33 @@ class UI {
                     </div>
                 </div>
             </div>
-            `} else {
+            `
+        } else {
             recipeSection.innerHTML = `
-        <div class="close-btn"><i class="fas fa-times"></i></div>
+            <header class="header-details">
+            <div class="close-btn">
+              <i class="fas fa-arrow-left icon"></i>
+            </div>
+            <div>
+              <i class="fas fa-heart icon"></i>
+            </div>
+            </header>
+
         
         <div class="recipe-info-container">
         <div class="recipe-image-container">
             <img src="${ data.meals[0].strMealThumb }" alt="${ data.meals[0].strMeal }">
         </div>
+        <div class="retop">
             <h3 class="recipe-title">
             ${ data.meals[0].strMeal }
             </h3>
             <div class="recipe-category-container">
-                <p class="recipe-category active">Category:</p>
+                <p class="recipe-category">Category:</p>
                 <p class="recipe-category-result">${ data.meals[0].strCategory }</p>
             </div>
             <div class="recipe-area-container">
-                <p class="recipe-area active">Area:</p>
+                <p class="recipe-area">Area:</p>
                 <p class="recipe-area-result">${ data.meals[0].strArea }</p>
             </div>
             <div class="heart-container" id="${ data.meals[0].idMeal }">
@@ -217,11 +228,15 @@ class UI {
                 <p class="instructions">
                     "${ data.meals[0].strInstructions }"
                 </p>
+                <div class="container-play">
+                <button src="https://www.youtube.com/embed/${ data.meals[0].strYoutube.slice(32) }" class="play-button">Play <i class="far fa-video"></i></button>
+            </div>
                 <p class="note active">Buon Appetito!</p>
                 <div class="video">
                 <iframe class="video" id="player" type="text/html" width="640" height="390" src="https://www.youtube.com/embed/${ data.meals[0].strYoutube.slice(32) }" frameborder="0"></iframe>
                 </div>
             </div>
+        </div>
         </div>
         `
         }
@@ -348,7 +363,7 @@ class UI {
     `
         }
     }
-    
+
 
     static removeRandomMeal() {
         randomMealSection.innerHTML = ''
@@ -561,6 +576,19 @@ categoriesContainer.addEventListener('mousemove', (e) => {
 
 
 
+// Fungsi untuk menutup pemberitahuan
+function closeNotification() {
+    document.getElementById("notification").style.display = "none";
+    // Simpan informasi penutupan pemberitahuan ke localStorage
+    localStorage.setItem("notificationClosed", "true");
+}
+
+// Cek apakah pemberitahuan sudah ditutup sebelumnya
+var isClosed = localStorage.getItem("notificationClosed");
+if (!isClosed) {
+    // Jika belum ditutup, tampilkan pemberitahuan
+    document.getElementById("notification").style.display = "block";
+}
 
 
 
@@ -569,5 +597,3 @@ categoriesContainer.addEventListener('mousemove', (e) => {
 
 //1. on favourite page make the category filter work
 //2. swap \r\ or "." in recipe instructions for <br> using regex?
-
-

@@ -11,6 +11,7 @@
         content="Search for your next delicious meal based on their category or their country of provenience." />
     <meta property="og:image" content="images/preview1.png" />
     <meta property="og:url" content="https://philiphinch.github.io/my-foods-app/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -18,9 +19,15 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="icon" type="image/png" href="images/fork-and-knife.ico" />
     <title>My Foods | Home</title>
+    
 </head>
 
 <body class="disable-select">
+    <div class="notification" id="notification">
+        <h1>Pembaruan</h1>
+        <p>penyesuain ui dan lain sebagainya.</p>
+        <span class="close" onclick="closeNotification()">X</span>
+      </div>
     <div class="container">
 
         <header class="header">
@@ -38,8 +45,16 @@
         <section class="recipe-section none">
 
         </section>
-        <section class="random-meal-section">
+        <section class="section">
             <!-- random meal container -->
+            <div id="greeting"></div>
+        </section>
+        <section class="section-ser">
+            <button class="search-button">
+                <i class="fa fa-search"></i>
+                Search Any Recipes
+              </button>
+              
         </section>
         <section class="meal-categories-section">
             <div class="title-container">
@@ -91,17 +106,32 @@
                 </div>
             </div>
             <div class="title-container">
-                <h1 class="title">Judul</h1>
+                <h1 class="title">Rekomendasi</h1>
                 <a class="see-all" href="#">See All</a>
             </div>
 
             <div class="grid">
 
             </div>
+            
         </section>
         <div class="extra-bottom-space"></div>
     </div>
     <script src="index.js"></script>
+    <script>document.addEventListener("DOMContentLoaded", function () {
+        var greetingElement = document.getElementById("greeting");
+        var currentTime = new Date().getHours();
+    
+        if (currentTime >= 0 && currentTime < 6) {
+            greetingElement.textContent = "Mau masak apa malam ini?";
+        } else if (currentTime >= 6 && currentTime < 12) {
+            greetingElement.textContent = "Mau masak apa untuk pagi ini?";
+        } else if (currentTime >= 12 && currentTime < 18) {
+            greetingElement.textContent = "Mau masak apa siang ini?";
+        } else {
+            greetingElement.textContent = "Mau masak apa sore ini?";
+        }
+    });</script>
 </body>
 
 </html>
